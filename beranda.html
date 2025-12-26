@@ -8,6 +8,14 @@
 </head>
 <body>
 
+  <!-- LOADING SCREEN -->
+<div id="loading">
+  <div class="loader">
+    <span class="spinner"></span>
+    <p>Memuat Beranda...</p>
+  </div>
+</div>
+
 <nav>
   <strong>Profile Wildan</strong>
   <div>
@@ -101,6 +109,15 @@
 
   </div>
 </div>
+
+<script>
+  window.addEventListener("load", () => {
+    const loading = document.getElementById("loading");
+    setTimeout(() => {
+      loading.classList.add("hide");
+    }, 5200); // durasi loading (ms)
+  });
+</script>
 
 </body>
 </html>

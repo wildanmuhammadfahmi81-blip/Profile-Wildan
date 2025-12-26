@@ -497,3 +497,47 @@ nav a:hover {
     position: static;
   }
 }
+
+/* ===== LOADING SCREEN ===== */
+#loading {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+#loading.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  text-align: center;
+  color: #e5e7eb;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255,255,255,.15);
+  border-top: 5px solid #38bdf8;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+.loader p {
+  font-size: 1rem;
+  letter-spacing: .5px;
+  color: #c7d2fe;
+}
+
+/* Animasi */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

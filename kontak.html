@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontak | Web Pribadi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <strong>Profile Wildan</strong>
+  <div>
+    <a href="beranda.html">Beranda</a>
+    <a href="tentang.html">Tentang</a>
+    <a href="kontak.html" class="active">Kontak</a>
+  </div>
+</nav>
+
+<!-- KONTEN -->
+<div class="container">
+  <h1>Hubungi Saya</h1>
+  <p class="subtitle">
+    Jika ingin berdiskusi, bekerja sama, atau sekadar menyapa,
+    silakan kirim pesan melalui WhatsApp.
+  </p>
+
+  <div class="contact-wrapper">
+
+    <!-- INFO -->
+    <div class="card contact-info">
+      <h2>Informasi Kontak</h2>
+
+      <div class="contact-item">
+        <span>📱</span>
+        <p><strong>WhatsApp</strong><br>082119484482</p>
+      </div>
+
+      <div class="contact-item">
+        <span>📧</span>
+        <p><strong>Email</strong><br>wildanmuhammadfahmi81@gmail.com</p>
+      </div>
+
+      <div class="contact-item">
+        <span>📷</span>
+        <p><strong>Instagram</strong><br>@wildanmfhm_</p>
+      </div>
+
+      <div class="contact-item">
+        <span>💻</span>
+        <p><strong>GitHub</strong><br>github.com/wildanmuhammadfahmi81</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="card contact-form">
+      <h2>Kirim Pesan via WhatsApp</h2>
+
+      <form onsubmit="sendWhatsApp(); return false;">
+        <input type="text" id="nama" placeholder="Nama Anda" required>
+        <input type="text" id="email" placeholder="Email / Kontak Anda" required>
+        <textarea id="pesan" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+
+        <button type="submit" class="btn">Kirim Pesan</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function sendWhatsApp() {
+  const nama = document.getElementById("nama").value;
+  const email = document.getElementById("email").value;
+  const pesan = document.getElementById("pesan").value;
+
+  const noWA = "6282119484482"; // GANTI NOMOR KAMU
+  const text = `Halo, saya ${nama}%0AEmail/Kontak: ${email}%0A%0APesan:%0A${pesan}`;
+
+  window.open(`https://wa.me/${noWA}?text=${text}`, "_blank");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #1f2933, #111827);
+  color: #f9fafb;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: rgba(0,0,0,0.4);
+}
+
+nav a {
+  color: #f9fafb;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* LOGIN */
+.login-box {
+  background: rgba(255,255,255,0.08);
+  padding: 40px;
+  max-width: 400px;
+  margin: 80px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #0ea5e9;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #cbd5f5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav div {
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SKILL BAR */
+.skill {
+  margin: 15px 0;
+}
+
+.skill span {
+  font-size: 14px;
+}
+
+.bar {
+  background: #1f2933;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.bar div {
+  height: 10px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+}
+
+/* CONTACT */
+.contact-box p {
+  margin: 10px 0;
+}
+
+/* INTRO SECTION (foto kiri, teks kanan) */
+.intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.intro img {
+  width: 140px;
+  height: auto;              /* tinggi mengikuti foto */
+  max-height: 180px;
+  border-radius: 19px;
+  object-fit: contain;       /* PENTING: foto utuh */
+  background: #111827;       /* biar rapi kalau ada sisa ruang */
+  padding: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+
+.intro-text h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.intro-text p {
+  color: #cbd5f5;
+  line-height: 1.8;
+  max-width: 600px;
+  text-align: justify;      /* INI KUNCINYA */
+  margin-bottom: 12px;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* LIGHTBOX */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* LIGHTBOX SLIDESHOW */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#lightbox .nav {
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+}
+
+#lightbox .prev {
+  left: 30px;
+}
+
+#lightbox .next {
+  right: 30px;
+}
+
+.subtitle {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-item span {
+  font-size: 22px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #333;
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   LOGIN PAGE
+================================ */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: "Poppins", sans-serif;
+}
+
+.login-box {
+  max-width: 420px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  animation: fadeUp 0.8s ease;
+}
+
+.login-box h2 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.login-desc {
+  color: #cbd5f5;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.login-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #000;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+}
+
+/* ===============================
+   BERANDA INTRO
+================================ */
+.intro-wrapper {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.intro-profile {
+  text-align: center;
+  position: sticky;
+  top: 100px;
+}
+
+.intro-profile img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.intro-profile h2 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.intro-profile span {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.intro-text h1 {
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  text-align: justify;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  color: #e5e7eb;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .intro-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-profile {
+    position: static;
+  }
+}

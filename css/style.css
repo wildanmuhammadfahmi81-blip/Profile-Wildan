@@ -622,3 +622,36 @@ body {
   }
 }
 
+/* ===== PAGE TRANSITION GLOBAL ===== */
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s ease;
+}
+
+#page-transition.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Animasi masuk halaman */
+body.page-enter {
+  animation: pageEnter .8s ease forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: scale(.96);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}

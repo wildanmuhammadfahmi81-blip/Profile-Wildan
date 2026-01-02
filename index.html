@@ -5,8 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Masuk | Profile Wildan</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/transition.js"></script>
 </head>
+<!-- PAGE TRANSITION -->
+<div id="page-transition"></div>
+
 <body class="login-page">
+
+    <!-- LOADING SCREEN -->
+<div id="loading">
+  <div class="loader">
+    <span class="spinner"></span>
+    <p>Harap Tunggu...</p>
+  </div>
+</div>
 
   <div class="login-box">
     <span class="badge">Personal Website</span>
@@ -19,9 +31,18 @@
     </p>
 
     <a href="beranda.html" class="login-btn">
-      Masuk ke Website →
+      Masuk ke Website
     </a>
   </div>
+
+  <script>
+  window.addEventListener("load", () => {
+    const loading = document.getElementById("loading");
+    setTimeout(() => {
+      loading.classList.add("hide");
+    }, 3200); // durasi loading (ms)
+  });
+</script>
 
 </body>
 </html>

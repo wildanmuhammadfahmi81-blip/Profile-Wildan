@@ -12,12 +12,16 @@
   <!-- PAGE TRANSITION -->
 <div id="page-transition"></div>
 
-<nav>
-  <strong>Profile Wildan</strong>
-  <div>
+<nav class="glass-nav">
+  <strong class="logo">Profile Wildan</strong>
+
+  <div class="nav-right">
     <a href="beranda.html" class="active">Beranda</a>
     <a href="tentang.html">Tentang</a>
     <a href="kontak.html">Kontak</a>
+
+    <!-- DARK MODE -->
+    <button id="theme-toggle">🌙</button>
   </div>
 </nav>
 
@@ -26,11 +30,13 @@
   <div class="intro-wrapper">
 
     <!-- FOTO & IDENTITAS -->
-    <div class="intro-profile">
-      <img src="img/profile.png" alt="Foto Wildan">
-      <h2>Wildan Muhammad Fahmi</h2>
-      <span>Mahasiswa Informatika</span>
-    </div>
+    <section class="hero">
+  <div class="intro-profile">
+    <img src="img/profile.png" alt="Foto Wildan">
+    <h2>Wildan Muhammad Fahmi</h2>
+    <span>Mahasiswa Informatika</span>
+  </div>
+</section>
 
     <!-- CERITA (TEKS ASLI TIDAK DIUBAH) -->
     <div class="intro-text">
@@ -105,6 +111,12 @@
 
   </div>
 </div>
+
+<div class="footer-bottom">
+    © 2026 — Wildan Muhammad Fahmi • Informatika UIN SSC
+  </div>
+</footer>
+<script src="js/theme.js"></script>
 
 </body>
 </html>

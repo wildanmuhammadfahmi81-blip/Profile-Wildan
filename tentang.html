@@ -6,16 +6,21 @@
   <title>Tentang Saya | Web Pribadi</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/transition.js"></script>
+  <script src="js/script.js"></script>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav>
-  <strong>Profile Wildan</strong>
-  <div>
+<nav class="glass-nav">
+  <strong class="logo">Profile Wildan</strong>
+
+  <div class="nav-right">
     <a href="beranda.html">Beranda</a>
-    <a href="tentang.html">Tentang</a>
+    <a href="tentang.html" class="active">Tentang</a>
     <a href="kontak.html">Kontak</a>
+
+    <!-- DARK MODE -->
+    <button id="theme-toggle">🌙</button>
   </div>
 </nav>
 
@@ -107,66 +112,31 @@
         <p>Tim MinSoc Hourse City KUNINGAN</p>
       </div>
 
+      <div class="gallery-item">
+        <img src="img/kegiatan13/1.jpg" onclick="openGallery(12)">
+        <p>Ikatan Mahasiswa Kuningan(IMK)</p>
+      </div>
+
     </div>
   </div>
 </div>
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
-  <span class="close" onclick="closeGallery()">&times;</span>
-  <span class="nav prev" onclick="prevImage()">&#10094;</span>
-  <img id="lightbox-img">
-  <span class="nav next" onclick="nextImage()">&#10095;</span>
+  <div class="lightbox-content">
+
+    <span class="close" onclick="closeGallery()">&times;</span>
+
+    <span class="nav prev" onclick="prevImage()">&#10094;</span>
+    <img id="lightbox-img">
+    <span class="nav next" onclick="nextImage()">&#10095;</span>
+
+  </div>
 </div>
-
-<!-- SCRIPT -->
-<script>
-const galleries = [
-  ["img/kegiatan1/1.jpg", "img/kegiatan1/2.jpg", "img/kegiatan1/3.jpg", "img/kegiatan1/4.jpg"],
-  ["img/kegiatan2/1.jpg", "img/kegiatan2/2.jpg", "img/kegiatan2/3.jpg", "img/kegiatan2/4.jpg"],
-  ["img/kegiatan3/1.jpg", "img/kegiatan3/2.jpg", "img/kegiatan3/3.jpg", "img/kegiatan3/4.jpg"],
-  ["img/kegiatan4/1.jpg", "img/kegiatan4/2.jpg", "img/kegiatan4/3.jpg", "img/kegiatan4/4.jpg", "img/kegiatan4/5.jpg", "img/kegiatan4/6.jpg", "img/kegiatan4/7.jpg", "img/kegiatan4/8.jpg"],
-  ["img/kegiatan5/1.jpg", "img/kegiatan5/2.jpg", "img/kegiatan5/3.jpg", "img/kegiatan5/4.jpg", "img/kegiatan5/5.jpg", "img/kegiatan5/6.jpg", "img/kegiatan5/7.jpg", "img/kegiatan5/8.jpg", "img/kegiatan5/9.jpg", "img/kegiatan5/10.jpg"],
-  ["img/kegiatan6/1.jpg", "img/kegiatan6/2.jpg", "img/kegiatan6/3.jpg", "img/kegiatan6/4.jpg", "img/kegiatan6/5.jpg", "img/kegiatan6/6.jpg", "img/kegiatan6/7.jpg", "img/kegiatan6/8.jpg", "img/kegiatan6/9.jpg", "img/kegiatan6/10.jpg", "img/kegiatan6/11.jpg", "img/kegiatan6/12.jpg", "img/kegiatan6/13.jpg"],
-  ["img/kegiatan7/1.jpg", "img/kegiatan7/2.jpg", "img/kegiatan7/3.jpg", "img/kegiatan7/4.jpg", "img/kegiatan7/5.jpg", "img/kegiatan7/6.jpg", "img/kegiatan7/7.jpg", "img/kegiatan7/8.jpg"],
-  ["img/kegiatan8/1.jpg", "img/kegiatan8/2.jpg", "img/kegiatan8/3.jpg", "img/kegiatan8/4.jpg"],
-  ["img/kegiatan9/1.jpg", "img/kegiatan9/2.jpg", "img/kegiatan9/3.jpg", "img/kegiatan9/4.jpg", "img/kegiatan9/5.jpg"],
-  ["img/kegiatan10/1.jpg", "img/kegiatan10/2.jpg", "img/kegiatan10/3.jpg", "img/kegiatan10/4.jpg", "img/kegiatan10/5.jpg", "img/kegiatan10/6.jpg", "img/kegiatan10/7.jpg", "img/kegiatan10/8.jpg", "img/kegiatan10/9.jpg"],
-  ["img/kegiatan11/1.jpg", "img/kegiatan11/2.jpg", "img/kegiatan11/3.jpg", "img/kegiatan11/4.jpg", "img/kegiatan11/5.jpg", "img/kegiatan11/6.jpg", "img/kegiatan11/7.jpg", "img/kegiatan11/8.jpg", "img/kegiatan11/9.jpg"],
-  ["img/kegiatan12/1.jpg", "img/kegiatan12/2.jpg", "img/kegiatan12/3.jpg", "img/kegiatan12/4.jpg", "img/kegiatan12/5.jpg", "img/kegiatan12/6.jpg", "img/kegiatan12/7.jpg", "img/kegiatan12/8.jpg", "img/kegiatan12/9.jpg"],
-];
-
-let currentGallery = 0;
-let currentIndex = 0;
-
-function openGallery(index) {
-  currentGallery = index;
-  currentIndex = 0;
-  document.getElementById("lightbox").style.display = "flex";
-  showImage();
-}
-
-function showImage() {
-  document.getElementById("lightbox-img").src =
-    galleries[currentGallery][currentIndex];
-}
-
-function nextImage() {
-  currentIndex = (currentIndex + 1) % galleries[currentGallery].length;
-  showImage();
-}
-
-function prevImage() {
-  currentIndex =
-    (currentIndex - 1 + galleries[currentGallery].length) %
-    galleries[currentGallery].length;
-  showImage();
-}
-
-function closeGallery() {
-  document.getElementById("lightbox").style.display = "none";
-}
-</script>
-
+<script src="js/script.js"></script>
+<script src="js/theme.js"></script>
+<div class="footer-bottom">
+    © 2026 — Wildan Muhammad Fahmi • Informatika UIN SSC
+  </div>
 </body>
 </html>
